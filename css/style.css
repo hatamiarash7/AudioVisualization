@@ -65,22 +65,22 @@ canvas {
     margin: -70px 0 0 -130px;
     padding: 10px 20px;
     font-size: 14px;
-    border: 1px solid #ff667f;
-    border-radius: 3px;
+    border-radius: 10px;
     background: #ff3354;
     color: #ffe5ea;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3), 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 #no-audio h1 {
     font-weight: normal;
     font-size: 18px;
     margin-top: 7px;
+    text-align: center;
 }
 
 #no-audio p {
     color: #ffccd4;
+    text-align: center;
 }
 
 #no-audio a {
@@ -88,4 +88,7 @@ canvas {
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
 }
