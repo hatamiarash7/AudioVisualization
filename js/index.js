@@ -1,6 +1,5 @@
-let media = ["audio.ogg"],
+let media = ["media/1.ogg"],
     fftSize = 1024, // [32, 64, 128, 256, 512, 1024, 2048]
-    background_color = "rgba(0, 0, 1, 1)",
     background_gradient_color_1 = "#000011",
     background_gradient_color_2 = "#060D1F",
     background_gradient_color_3 = "#02243F",
@@ -412,7 +411,7 @@ function Point(config) {
         this.radius = Math.abs(w, h) / 10;
         this.x = cx + this.radius * sin(PI_HALF * this.angle);
         this.y = cy + this.radius * cos(PI_HALF * this.angle);
-    }
+    };
 
     this.updateDynamics();
 
@@ -429,7 +428,7 @@ function AvgPoint(config) {
         this.radius = Math.abs(w, h) / 10;
         this.x = cx + this.radius * sin(PI_HALF * this.angle);
         this.y = cy + this.radius * cos(PI_HALF * this.angle);
-    }
+    };
 
     this.updateDynamics();
 
