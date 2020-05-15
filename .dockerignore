@@ -1,0 +1,8 @@
+.git
+.idea
+.gitignore
+.gitattributes
+.editorconfig
+Dockerfile
+README.md
+LICENSE

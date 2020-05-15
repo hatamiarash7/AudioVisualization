@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  site:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: hatamiarash7/audio_visualization
+    container_name: audio_visualization
+    restart: always
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 13005:80
