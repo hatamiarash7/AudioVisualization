@@ -8,8 +8,8 @@ services:
     image: hatamiarash7/audio_visualization
     container_name: audio_visualization
     restart: always
-    working_dir: /var/www/html
+    working_dir: /usr/share/nginx/html/
     volumes:
-      - ./:/var/www/html
+      - ./:/usr/share/nginx/html/
     ports:
       - 13005:80
