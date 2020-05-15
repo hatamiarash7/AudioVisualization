@@ -1,15 +1,33 @@
 version: "3.7"
 
 services:
-  site:
+  audio-visualization:
     build:
       context: .
       dockerfile: ./Dockerfile
     image: hatamiarash7/audio_visualization
-    container_name: audio_visualization
-    restart: always
+    container_name: audio-visualization
+    restart: unless-stopped
     working_dir: /usr/share/nginx/html/
     volumes:
       - ./:/usr/share/nginx/html/
-    ports:
-      - 13005:80
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      # Dashboard
+      - "traefik.http.routers.audio-visualization.rule=Host(`audio-visualization.arash-hatami.ir`)"
+      - "traefik.http.routers.audio-visualization.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.audio-visualization.entrypoints=websecure"
+      - "traefik.http.routers.audio-visualization.service=audio-visualization-nginx"
+      - "traefik.http.services.audio-visualization-nginx.loadbalancer.server.port=80"
+      # HTTPS Redirect
+      - "traefik.http.routers.audio-visualization-http.rule=Host(`audio-visualization.arash-hatami.ir`)"
+      - "traefik.http.routers.audio-visualization-http.entrypoints=web"
+      - "traefik.http.routers.audio-visualization-http.middlewares=audio-visualization-https@docker"
+      - "traefik.http.middlewares.audio-visualization-https.redirectscheme.scheme=https"
+
+networks:
+  traefik:
+    external: true
