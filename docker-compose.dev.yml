@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  audio-visualization:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: hatamiarash7/audio_visualization
+    container_name: audio-visualization
+    restart: unless-stopped
+    working_dir: /usr/share/nginx/html/
+    ports:
+      - 8082:80
+    volumes:
+      - ./:/usr/share/nginx/html/
