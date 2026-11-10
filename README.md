@@ -2,7 +2,7 @@
 
 Real-time audio visualization built with plain JavaScript, Canvas and the Web Audio API. No dependencies, no build step.
 
-![audio](https://user-images.githubusercontent.com/16325641/136423841-e0ad2183-8b37-478f-bd7d-0ce01a2faf21.jpg)
+![sc](.github/sc.png)
 
 ## Features
 
