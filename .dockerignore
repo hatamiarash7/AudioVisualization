@@ -1,8 +1,14 @@
 .git
+.github
 .idea
+.vscode
 .gitignore
 .gitattributes
 .editorconfig
+.gitlab-ci.yml
+renovate.json
 Dockerfile
-README.md
+docker-compose*.yml
+*.md
 LICENSE
+CNAME
